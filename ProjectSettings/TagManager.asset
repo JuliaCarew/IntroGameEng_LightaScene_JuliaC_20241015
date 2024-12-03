@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Event1
+  - Event2
+  - Event3
+  - Audio1
+  - Audio2
+  - Audio3
+  - Goal
   layers:
   - Default
   - TransparentFX
