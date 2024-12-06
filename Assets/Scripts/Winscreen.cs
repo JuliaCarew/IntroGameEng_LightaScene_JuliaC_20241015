@@ -6,17 +6,23 @@ using UnityEngine.SceneManagement;
 public class Winscreen : MonoBehaviour
 {
     public GameObject winScreen;
+    public Pickups pickupsref;
     private void Start()
     {
-        winScreen.SetActive(false);
+        if (winScreen != null)
+        {
+            winScreen.SetActive(false); // win screen starts inactive
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (gameObject.CompareTag("Goal"))
+        if (other.CompareTag("Player"))
         {
             Debug.Log("Triggered Goal");
-            winScreen.SetActive(true);
-            Time.timeScale = 0;
+            if (pickupsref != null && pickupsref.collectedPartsCount >= pickupsref.totalParts)
+            {
+                ShowWinScreen();
+            }
         }
     }
 
@@ -24,5 +30,16 @@ public class Winscreen : MonoBehaviour
     {
         Debug.Log("Quit to menu");
         SceneManager.LoadScene(0);
+    }
+
+    public void ShowWinScreen()
+    {
+        if (winScreen != null)
+        {
+            winScreen.SetActive(true);
+            Time.timeScale = 0f; 
+            Cursor.lockState = CursorLockMode.None; 
+            Cursor.visible = true; 
+        }
     }
 }

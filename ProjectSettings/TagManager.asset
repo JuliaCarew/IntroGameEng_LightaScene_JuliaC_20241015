@@ -11,6 +11,10 @@ TagManager:
   - Audio2
   - Audio3
   - Goal
+  - PickUp
+  - PickUpBody
+  - PickUpHead
+  - PickUpLegs
   layers:
   - Default
   - TransparentFX

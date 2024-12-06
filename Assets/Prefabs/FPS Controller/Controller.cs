@@ -10,7 +10,7 @@ using UnityEditor;
 
 public class Controller : MonoBehaviour
 {
-    
+    //public Winscreen winScreenref;
     public static Controller Instance { get; protected set; }
 
     public Camera MainCamera;
@@ -165,4 +165,13 @@ public class Controller : MonoBehaviour
         }
 
     }
+
+    // public void TriggerWin()
+    // {
+    //     if (winScreenref != null)
+    //     {
+    //         winScreenref.ShowWinScreen();
+    //         LockControl = true; 
+    //     }
+    // }
 }
